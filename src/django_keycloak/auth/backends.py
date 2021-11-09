@@ -42,6 +42,7 @@ class KeycloakAuthorizationBase(object):
         return user_obj._keycloak_perm_cache
 
     def get_keycloak_permissions(self, user_obj):
+        return set() #fixme entitlement api currently deprecated
         if not hasattr(user_obj, 'oidc_profile'):
             return set()
 
